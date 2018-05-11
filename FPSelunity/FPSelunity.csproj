@@ -327,6 +327,7 @@
     <Compile Include="Assets\Scripts\CameraLook.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\CursorVisible.cs" />
+    <Compile Include="Assets\Scripts\EnemyDamage.cs" />
     <Compile Include="Assets\Scripts\EnemyIA.cs" />
     <Compile Include="Assets\Scripts\HealthEnemy.cs" />
     <Compile Include="Assets\Scripts\HealthPlayer.cs" />

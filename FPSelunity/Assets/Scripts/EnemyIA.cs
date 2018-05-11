@@ -12,8 +12,11 @@ public class EnemyIA : MonoBehaviour
     [SerializeField] private float raycastDist;
     [SerializeField] private LayerMask layers;
     [SerializeField] private string targetTagName;
+
+    private Animator anim; 
     
     void Start() {
+        anim = GetComponent<Animator>();
     }
     
     void Update() {
@@ -25,7 +28,7 @@ public class EnemyIA : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(transform.position, dir, out hit, raycastDist, layers);
 
-        if (!hit.collider) return;
+        if (!hit.collider) { return; }
 
         if (hit.collider.tag == targetTagName)
         {
@@ -36,16 +39,13 @@ public class EnemyIA : MonoBehaviour
             Vector3 mov = dir * speed * Time.deltaTime;
             mov = Vector3.ClampMagnitude(mov, dist);
             transform.position += mov;
+            anim.SetBool("isWalking", true);
         }
+        else
+            anim.SetBool("isWalking", false);
 
         Debug.DrawLine(
             transform.position,
             transform.position + transform.forward * raycastDist, Color.yellow);
     }
-    /*
-    void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, raycastDist);
-    }*/
-
 }

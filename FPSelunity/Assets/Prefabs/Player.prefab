@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114916104147183306}
   - component: {fileID: 114019029994839638}
   - component: {fileID: 114221595225789204}
+  - component: {fileID: 114081492933476158}
+  - component: {fileID: 114330448329629714}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -102,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469919154202098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.95, y: 1, z: 83.21}
+  m_LocalPosition: {x: 37.65, y: 1, z: 74.761}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4003609710202460}
@@ -248,6 +250,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 3
   cameraTrans: {fileID: 4003609710202460}
+--- !u!114 &114081492933476158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469919154202098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1a48b046bff1c4a97cd52bd395c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114221595225789204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,6 +274,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 1866445884414050}
   damage: 50
+  enemyTag: Enemy
+--- !u!114 &114330448329629714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1469919154202098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85609db8b735315439bb941ac21377a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
 --- !u!114 &114916104147183306
 MonoBehaviour:
   m_ObjectHideFlags: 1

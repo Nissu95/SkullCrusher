@@ -6,7 +6,7 @@ public class HealthPlayer : MonoBehaviour {
 
     private float currentHealth;
 
-    const float MaxHealth=100f;
+    [SerializeField] float MaxHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +22,6 @@ public class HealthPlayer : MonoBehaviour {
     
     void Death()
     {
-
+        Debug.Log("Game Over PT");
     }
 }

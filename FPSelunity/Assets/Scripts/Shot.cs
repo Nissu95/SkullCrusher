@@ -6,16 +6,16 @@ public class Shot : MonoBehaviour {
 
     [SerializeField] GameObject m_Camera;
     [SerializeField] float damage;
+    [SerializeField] string enemyTag;
 
 	void Update () {
 
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit);
-
-            if (hit.collider.CompareTag("Enemy"))
-                hit.collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+            if(Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit))
+                if (hit.collider.CompareTag(enemyTag))
+                 hit.collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
         }
         
     }
