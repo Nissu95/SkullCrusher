@@ -5,13 +5,17 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
 
     [SerializeField] string playerTag;
-    [SerializeField] float enemyDamage;
+    EnemyDT enemyType;
+
+    void Start() {
+        enemyType = GetComponent<EnemyDT>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
         {
-            other.GetComponent<HealthPlayer>().TakeDamage(enemyDamage);
+            other.GetComponent<HealthPlayer>().TakeDamage(enemyType.GetDamage());
         }
     }
 }

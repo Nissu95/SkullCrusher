@@ -5,8 +5,15 @@ using UnityEngine;
 public class Shot : MonoBehaviour {
 
     [SerializeField] GameObject m_Camera;
-    [SerializeField] float damage;
     [SerializeField] string enemyTag;
+
+    PlayerDT pl;
+
+    void Start() {
+
+        pl = GetComponent<PlayerDT>();
+
+    }
 
 	void Update () {
 
@@ -15,7 +22,7 @@ public class Shot : MonoBehaviour {
             RaycastHit hit;
             if(Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit))
                 if (hit.collider.CompareTag(enemyTag))
-                 hit.collider.gameObject.GetComponent<HealthEnemy>().TakeDamage(damage);
+                 hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(pl.GetDamage());
         }
         
     }

@@ -53,7 +53,16 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraLook.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+     <Compile Include="Assets\Scripts\CursorVisible.cs" />
+     <Compile Include="Assets\Scripts\Data\ElementData.cs" />
+     <Compile Include="Assets\Scripts\Data\EnemyData.cs" />
+     <Compile Include="Assets\Scripts\EnemyDamage.cs" />
+     <Compile Include="Assets\Scripts\EnemyDT.cs" />
+     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyIA.cs" />
+     <Compile Include="Assets\Scripts\HealthPlayer.cs" />
+     <Compile Include="Assets\Scripts\PlayerDT.cs" />
+     <Compile Include="Assets\Scripts\Shot.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/nicos/Desktop/Programs/FPSelu/FPSelunity/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

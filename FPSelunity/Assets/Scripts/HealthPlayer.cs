@@ -7,8 +7,7 @@ public class HealthPlayer : MonoBehaviour {
     private float currentHealth;
 
     [SerializeField] float MaxHealth;
-
-	// Use this for initialization
+    
 	void Start () {
         currentHealth = MaxHealth;
 	}
