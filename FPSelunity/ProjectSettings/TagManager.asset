@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - E_Damage
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -15,11 +15,11 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Enemy
-  - Wall
-  - E_Damage
-  - P_Damage
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

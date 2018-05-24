@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSelunity", "Assembly-CSharp.csproj", "{76E86DE3-C9E8-A428-F587-ABC7BDE4F770}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSelunity", "FPSelunity.csproj", "{E447A6C9-8657-9EBC-73F1-06166B05A7CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{76E86DE3-C9E8-A428-F587-ABC7BDE4F770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{76E86DE3-C9E8-A428-F587-ABC7BDE4F770}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{76E86DE3-C9E8-A428-F587-ABC7BDE4F770}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{76E86DE3-C9E8-A428-F587-ABC7BDE4F770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E447A6C9-8657-9EBC-73F1-06166B05A7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E447A6C9-8657-9EBC-73F1-06166B05A7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E447A6C9-8657-9EBC-73F1-06166B05A7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E447A6C9-8657-9EBC-73F1-06166B05A7CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
