@@ -19,7 +19,9 @@ public class ProyectileScript : MonoBehaviour {
 
         if (other.CompareTag(enemyTag)) {
             var enemy = other.GetComponent<EnemyHealth>();
-            enemy.TakeDamage(PlayerManager.singleton.GetDamage());
+            var enemyName = other.GetComponent<EnemyDT>().data.name;
+            var playerElementName = PlayerManager.singleton.GetName();
+            enemy.TakeDamage(PlayerManager.singleton.GetDamage() * BattleManager.singleton.ElementMultiplier(playerElementName, enemyName));
         }
 
         if (other.CompareTag(stageTag))     //fijarse porque no funciona

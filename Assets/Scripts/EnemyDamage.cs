@@ -5,18 +5,16 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour {
 
     [SerializeField] string playerTag;
-    EnemyDT enemyType;
-    
-
-    void Start() {
-        enemyType = GetComponent<EnemyDT>();
-    }
+    [SerializeField] float enemyDamage;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(playerTag))
         {
-            other.GetComponent<HealthPlayer>().TakeDamage(enemyType.GetDamage());
+            var myName = GetComponent<EnemyDT>().data.name;
+            var playerElementName = PlayerManager.singleton.GetName();
+            other.GetComponent<HealthPlayer>().TakeDamage(enemyDamage * BattleManager.singleton.ElementMultiplier(myName, playerElementName));
+            Debug.Log(BattleManager.singleton.ElementMultiplier(myName, playerElementName));
         }
     }
 }

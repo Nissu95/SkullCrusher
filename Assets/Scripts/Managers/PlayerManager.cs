@@ -47,6 +47,10 @@ public class PlayerManager : MonoBehaviour {
         return data[elementIndex].bulletPref;
     }
 
+    public string GetName() {
+        return data[elementIndex].name;
+    }
+
     void ChangeMaterial()
     {
         switch (data[elementIndex].name)

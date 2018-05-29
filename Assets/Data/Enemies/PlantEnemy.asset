@@ -11,7 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376c0ceafa2998542a2d722ac2d2c7ff, type: 3}
   m_Name: PlantEnemy
   m_EditorClassIdentifier: 
-  name: Plant Enemy
+  name: Plant
   descriptopn: 
-  damage: 10
-  maxHealth: 100

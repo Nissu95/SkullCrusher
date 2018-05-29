@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
+     [SerializeField] float enemyMaxHealth;
 
     float currentHealth;
-    EnemyDT enemyType;
 
     void Start()
     {
-        enemyType = GetComponent<EnemyDT>();
-        currentHealth = enemyType.GetMaxHealth();
+        currentHealth = enemyMaxHealth;
     }
 
     public void TakeDamage(float amount)
