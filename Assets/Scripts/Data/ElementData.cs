@@ -7,6 +7,6 @@ public class ElementData : ScriptableObject{
 
     public new string name;
     public float damage;
-    public float defense;
+    public GameObject bulletPref;
 
 }

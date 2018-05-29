@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Name: FireElement
   m_EditorClassIdentifier: 
   name: Fire
-  damage: 15
-  defense: 10
+  damage: 30

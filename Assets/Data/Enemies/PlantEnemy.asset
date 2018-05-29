@@ -13,6 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Plant Enemy
   descriptopn: 
-  damage: 20
-  defense: 5
+  damage: 10
   maxHealth: 100

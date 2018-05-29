@@ -13,6 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Water Enemy
   descriptopn: 
-  damage: 5
-  defense: 20
+  damage: 10
   maxHealth: 100

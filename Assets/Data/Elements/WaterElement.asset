@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Name: WaterElement
   m_EditorClassIdentifier: 
   name: Water
-  damage: 5
-  defense: 20
+  damage: 30

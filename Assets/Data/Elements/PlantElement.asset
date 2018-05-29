@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Name: PlantElement
   m_EditorClassIdentifier: 
   name: Plant
-  damage: 20
-  defense: 5
+  damage: 30

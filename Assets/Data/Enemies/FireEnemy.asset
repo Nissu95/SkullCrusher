@@ -13,6 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fire Enemy
   descriptopn: 
-  damage: 15
-  defense: 10
+  damage: 10
   maxHealth: 100

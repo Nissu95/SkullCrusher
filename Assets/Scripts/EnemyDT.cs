@@ -15,8 +15,4 @@ public class EnemyDT : MonoBehaviour
         return data.damage;
     }
 
-    public float GetDefense() {
-        return data.defense;
-    }
-
 }

@@ -30,9 +30,4 @@ public class PlayerDT : MonoBehaviour {
         return data[elementIndex].damage;
     }
 
-    public float GetDefense() {
-
-        return data[elementIndex].defense;
-    }
-
 }
