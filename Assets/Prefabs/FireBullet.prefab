@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33793180483818010}
   - component: {fileID: 135509667184279592}
   - component: {fileID: 23395920715695360}
+  - component: {fileID: 114432133410476800}
   m_Layer: 8
   m_Name: FireBullet
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579326342733914}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 41.9, y: 0.17553924, z: 70.423096}
+  m_LocalRotation: {x: -0.14305635, y: 0.34327912, z: -0.05298911, w: -0.92676127}
+  m_LocalPosition: {x: 36.883293, y: 1.08, z: 62.3742}
   m_LocalScale: {x: 0.3510785, y: 0.35107848, z: 0.35107848}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579326342733914}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114432133410476800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579326342733914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f3bd91171ead3438b5de0bcec6e3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proyectileSpeed: 20
 --- !u!135 &135509667184279592
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -90,7 +103,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1579326342733914}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
