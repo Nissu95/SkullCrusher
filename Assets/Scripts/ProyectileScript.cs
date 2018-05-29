@@ -5,6 +5,8 @@ using UnityEngine;
 public class ProyectileScript : MonoBehaviour {
 
     [SerializeField] float proyectileSpeed;
+    [SerializeField] string enemyTag;
+    [SerializeField] string stageTag;
 
     void Start() {
     }
@@ -14,10 +16,14 @@ public class ProyectileScript : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Enemy")) {
+
+        if (other.CompareTag(enemyTag)) {
             var enemy = other.GetComponent<EnemyHealth>();
             enemy.TakeDamage(PlayerManager.singleton.GetDamage());
         }
+
+        if (other.CompareTag(stageTag))     //fijarse porque no funciona
+            Destroy(this.gameObject);
     }
 
 }

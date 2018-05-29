@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour {
         if (singleton == null)
             singleton = this;
         else
-            Debug.LogError("Enemy Manager duplicado", gameObject);
+            Debug.LogError("Player Manager duplicado", gameObject);
     }
 
     void Start () {
