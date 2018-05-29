@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Water
   damage: 30
+  bulletPref: {fileID: 1809550889534312, guid: ea0a9f8479be4c2499820b284faefa9a, type: 2}

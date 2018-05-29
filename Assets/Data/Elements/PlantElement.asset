@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Plant
   damage: 30
+  bulletPref: {fileID: 1154110280682192, guid: a6eebdfa315138d4fa6f0b5cab80c32c, type: 2}

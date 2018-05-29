@@ -30,4 +30,9 @@ public class PlayerDT : MonoBehaviour {
         return data[elementIndex].damage;
     }
 
+    public GameObject GetBulletPrefab()
+    {
+        return data[elementIndex].bulletPref;
+    }
+
 }
