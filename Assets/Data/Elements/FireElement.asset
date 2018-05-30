@@ -13,4 +13,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fire
   damage: 30
-  bulletPref: {fileID: 1579326342733914, guid: ddfcb614c30288646bad9508b2440b81, type: 2}

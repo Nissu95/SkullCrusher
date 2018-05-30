@@ -42,11 +42,6 @@ public class PlayerManager : MonoBehaviour {
         return data[elementIndex].damage;
     }
 
-    public GameObject GetBulletPrefab()
-    {
-        return data[elementIndex].bulletPref;
-    }
-
     public string GetName() {
         return data[elementIndex].name;
     }

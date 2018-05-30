@@ -15,21 +15,21 @@ public class BattleManager : MonoBehaviour {
             Debug.LogError("Battle Manager duplicado", gameObject);
     }
 
-    public float ElementMultiplier(string attackerName, string reciberName) {
+    public float ElementMultiplier(string attackerName, string receiverName) {
 
-        if (attackerName == reciberName)
+        if (attackerName == receiverName)
             return 1;
-        if (attackerName == "Fire" && reciberName == "Plant")
+        if (attackerName == "Fire" && receiverName == "Plant")
             return 2;
-        if (attackerName == "Fire" && reciberName == "Water")
+        if (attackerName == "Fire" && receiverName == "Water")
             return 0.5f;
-        if (attackerName == "Water" && reciberName == "Fire")
+        if (attackerName == "Water" && receiverName == "Fire")
             return 2;
-        if (attackerName == "Water" && reciberName == "Plant")
+        if (attackerName == "Water" && receiverName == "Plant")
             return 0.5f;
-        if (attackerName == "Plant" && reciberName == "Water")
+        if (attackerName == "Plant" && receiverName == "Water")
             return 2;
-        if (attackerName == "Plant" && reciberName == "Fire")
+        if (attackerName == "Plant" && receiverName == "Fire")
             return 0.5f;
         
         return 0;
