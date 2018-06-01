@@ -12,10 +12,14 @@ public class PlayerManager : MonoBehaviour {
 
     void Awake()
     {
-        if (singleton == null)
-            singleton = this;
+        DontDestroyOnLoad(this);
+        if (singleton != null)
+        {
+            Debug.LogError("Battle Manager duplicado", gameObject);
+            Destroy(this);
+        }
         else
-            Debug.LogError("Player Manager duplicado", gameObject);
+            singleton = this;
     }
 
     void Start () {

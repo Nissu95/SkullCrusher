@@ -1551,7 +1551,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   targetTagName: Player
-  distanceDamage: 5
+  distanceDamage: 2
   timeNextAttack: 3
 --- !u!136 &136986990356785732
 CapsuleCollider:

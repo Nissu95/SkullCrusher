@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour {
 
-    [SerializeField] EnemyDT enemyType;
-
     public static BattleManager singleton;
 
     void Awake() {
-        if (singleton == null)
-            singleton = this;
-        else
+
+        DontDestroyOnLoad(this);
+        if (singleton != null)
+        {
             Debug.LogError("Battle Manager duplicado", gameObject);
+            Destroy(this);
+        }
+        else
+            singleton = this;
     }
 
     public float ElementMultiplier(string attackerName, string receiverName) {

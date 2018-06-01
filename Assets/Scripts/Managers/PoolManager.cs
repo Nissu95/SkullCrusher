@@ -19,7 +19,15 @@ public class PoolManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        instance = this;
+        DontDestroyOnLoad(this);
+        if (instance != null)
+        {
+            Debug.LogError("Battle Manager duplicado", gameObject);
+            Destroy(this);
+        }
+        else
+            instance = this;
+
 
         Pool[] ps = GetComponentsInChildren<Pool>();
 

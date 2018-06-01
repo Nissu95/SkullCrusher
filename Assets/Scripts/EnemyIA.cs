@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEditor;
+﻿using UnityEngine;
 
 public class EnemyIA : MonoBehaviour
 {
@@ -34,10 +31,30 @@ public class EnemyIA : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, dir, out hit, raycastDist, layers))
         {
-            if (hit.distance <= distanceDamage && attackTimer <= 0)
+            if (hit.distance <= distanceDamage )
             {
-                anim.SetTrigger("Attack");
-                attackTimer = timeNextAttack;
+                if (attackTimer <= 0)
+                {
+                    anim.SetTrigger("Attack");
+                    attackTimer = timeNextAttack;
+                }
+                
+            }
+            else
+            {
+                if (hit.collider.tag == targetTagName)
+                {
+                    diff.y = 0;
+
+                    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(diff), 0.1f);
+
+                    Vector3 mov = dir * speed * Time.deltaTime;
+                    mov = Vector3.ClampMagnitude(mov, dist);
+                    transform.position += mov;
+                    anim.SetBool("isWalking", true);
+                }
+                else
+                    anim.SetBool("isWalking", false);
             }
         }
         
@@ -48,19 +65,7 @@ public class EnemyIA : MonoBehaviour
             return;
         }
 
-        if (hit.collider.tag == targetTagName)
-        {
-            diff.y = 0;
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(diff), 0.1f);
-
-            Vector3 mov = dir * speed * Time.deltaTime;
-            mov = Vector3.ClampMagnitude(mov, dist);
-            transform.position += mov;
-            anim.SetBool("isWalking", true);
-        }
-        else
-            anim.SetBool("isWalking", false);
+        
 
         Debug.DrawLine(
             transform.position,
