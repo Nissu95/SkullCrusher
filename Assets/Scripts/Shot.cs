@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour {
 
+    [SerializeField] float attackCooldown;
+
     private Pool pool;
+    float timer;
 
     void Start() {
+        timer = attackCooldown;
     }
 
 	void Update () {
-        
-        if (Input.GetMouseButtonDown(0))
+
+        timer += Time.deltaTime;
+
+        if (Input.GetMouseButtonDown(1) && timer >= attackCooldown)
         {
             pool = PoolManager.GetInstance().GetPool(PlayerManager.singleton.GetName() + "ProyectilePool");
 
@@ -20,11 +26,7 @@ public class Shot : MonoBehaviour {
             po.gameObject.transform.rotation= Camera.main.transform.rotation;
 
             po.gameObject.tag = PlayerManager.singleton.GetName();
-
-            /*GameObject proyectile = PlayerManager.singleton.GetBulletPrefab();
-            proyectile.transform.position = transform.position;
-            proyectile.transform.rotation = Camera.main.transform.rotation;
-            Instantiate(proyectile);*/
+            timer = 0;
         }
         
     }

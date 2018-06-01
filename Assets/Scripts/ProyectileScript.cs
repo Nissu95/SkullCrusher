@@ -30,9 +30,9 @@ public class ProyectileScript : MonoBehaviour {
 
         if (other.CompareTag(enemyTag)) {
             GetComponent<PoolObject>().Recycle();
-            var enemy = other.GetComponent<EnemyHealth>();
-            var enemyName = other.GetComponent<EnemyDT>().data.name;
-            var playerElementName = PlayerManager.singleton.GetName();
+            EnemyHealth enemy = other.GetComponent<EnemyHealth>();
+            string enemyName = other.GetComponent<EnemyDT>().data.name;
+            string playerElementName = PlayerManager.singleton.GetName();
             enemy.TakeDamage(PlayerManager.singleton.GetDamage() * BattleManager.singleton.ElementMultiplier(playerElementName, enemyName));
         }
 

@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4082056421495520}
   - component: {fileID: 33821059852392714}
   - component: {fileID: 23106631767311080}
-  - component: {fileID: 95253912436857878}
+  - component: {fileID: 65580765181410880}
+  - component: {fileID: 114557641353210182}
   m_Layer: 0
   m_Name: dark_sword
   m_TagString: Untagged
@@ -108,8 +109,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135006505825974}
   m_LocalRotation: {x: 0.11609902, y: 0.017510016, z: -0.1481016, w: 0.9819778}
-  m_LocalPosition: {x: 0.24499893, y: 0.035440207, z: 1.2455139}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.163, y: 0.17522, z: 0.707}
+  m_LocalScale: {x: 0.69935507, y: 0.69935507, z: 0.69935507}
   m_Children:
   - {fileID: 4450951410235086}
   m_Father: {fileID: 4534790075553616}
@@ -159,7 +160,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -261,6 +262,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1135006505825974}
   m_Mesh: {fileID: 4300000, guid: f826aabf902c6364d8e459c912b37188, type: 3}
+--- !u!65 &65580765181410880
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135006505825974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5298911, y: 1.5327027, z: 0.116319805}
+  m_Center: {x: -0.00000000978618, y: 0.50037295, z: 0}
 --- !u!81 &81337850993285254
 AudioListener:
   m_ObjectHideFlags: 1
@@ -268,23 +281,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866445884414050}
   m_Enabled: 1
---- !u!95 &95253912436857878
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1135006505825974}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f826aabf902c6364d8e459c912b37188, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114019029994839638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1db1cd27360a5c449d69257de839800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackCooldown: 5
 --- !u!114 &114330448329629714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -332,6 +329,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  gameOverScene: GameOverScene
+--- !u!114 &114557641353210182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1135006505825974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b325ebfb608f2f4abd3f504bd180b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTag: Enemy
+  swordDamage: 10
+  attackCooldown: 2
 --- !u!114 &114916104147183306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -443,7 +455,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -189830571
+  randomSeed: 704083974
   InitialModule:
     serializedVersion: 3
     enabled: 1

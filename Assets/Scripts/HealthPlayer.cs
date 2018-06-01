@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour {
 
-    private float currentHealth;
-
     [SerializeField] float MaxHealth;
+    [SerializeField] string gameOverScene;
+
+    private float currentHealth;
     
 	void Start () {
         currentHealth = MaxHealth;
@@ -21,6 +23,6 @@ public class HealthPlayer : MonoBehaviour {
     
     void Death()
     {
-        Debug.Log("Game Over PT");
+        SceneManager.LoadScene(gameOverScene);
     }
 }
