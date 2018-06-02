@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    public string SceneToLoad = "Game";
+    [SerializeField] string SceneToLoad = "Game";
     Button button;
 
     private void Awake()

@@ -203,10 +203,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 114090704720203988, guid: 3ace4c7f16442734bbabe6869148e33b,
+    - target: {fileID: 224996793397574132, guid: 3ace4c7f16442734bbabe6869148e33b,
         type: 2}
-      propertyPath: nextLevel
-      value: Menu
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224996793397574132, guid: 3ace4c7f16442734bbabe6869148e33b,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ace4c7f16442734bbabe6869148e33b, type: 2}
@@ -2785,15 +2790,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 32
       objectReference: {fileID: 0}
-    - target: {fileID: 1166835200472990, guid: 03f980a3fe0024a4aa4ee241511b8844, type: 2}
-      propertyPath: m_Name
-      value: WaterSkeleton (7)
-      objectReference: {fileID: 0}
     - target: {fileID: 114067125372069488, guid: 03f980a3fe0024a4aa4ee241511b8844,
         type: 2}
       propertyPath: tr_Player
       value: 
       objectReference: {fileID: 1700643284}
+    - target: {fileID: 1166835200472990, guid: 03f980a3fe0024a4aa4ee241511b8844, type: 2}
+      propertyPath: m_Name
+      value: WaterSkeleton (7)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 03f980a3fe0024a4aa4ee241511b8844, type: 2}
   m_IsPrefabParent: 0
@@ -3151,6 +3156,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f64ce0e4ca099141827d9f1c5479ef3, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1871161556 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1974212496214234, guid: 3f64ce0e4ca099141827d9f1c5479ef3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1871161555}
+--- !u!114 &1871161557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1871161556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116ef0260e242074ebfa89ab4cbfb9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextLevel: Menu
 --- !u!1001 &1925423921
 Prefab:
   m_ObjectHideFlags: 0

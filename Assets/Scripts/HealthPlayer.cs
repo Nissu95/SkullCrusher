@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float MaxHealth;
     [SerializeField] string gameOverScene;
+    [SerializeField] Slider healthBar;
 
     private float currentHealth;
     
@@ -19,6 +21,8 @@ public class HealthPlayer : MonoBehaviour {
         currentHealth -= amount;
         if (currentHealth <= 0)
             Death();
+
+        healthBar.value = currentHealth / MaxHealth;
     }
     
     void Death()

@@ -38,6 +38,10 @@ public class EnemyIA : MonoBehaviour
                     anim.SetTrigger("Attack");
                     attackTimer = timeNextAttack;
                 }
+                else
+                {
+                    anim.SetBool("isWalking", false);
+                }
                 
             }
             else

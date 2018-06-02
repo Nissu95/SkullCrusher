@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Shot : MonoBehaviour {
 
     [SerializeField] float attackCooldown;
+    [SerializeField] Image cooldownImage;
 
     private Pool pool;
     float timer;
@@ -16,6 +16,8 @@ public class Shot : MonoBehaviour {
 	void Update () {
 
         timer += Time.deltaTime;
+
+        cooldownImage.fillAmount = timer / attackCooldown;
 
         if (Input.GetMouseButtonDown(1) && timer >= attackCooldown)
         {
