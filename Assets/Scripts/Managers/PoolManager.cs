@@ -19,10 +19,11 @@ public class PoolManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        DontDestroyOnLoad(this);
+
+        //DontDestroyOnLoad(this);
         if (instance != null)
         {
-            Debug.LogError("Battle Manager duplicado", gameObject);
+            Debug.LogError("Pool Manager duplicado", gameObject);
             Destroy(this);
         }
         else

@@ -8,7 +8,7 @@ public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float MaxHealth;
     [SerializeField] string gameOverScene;
-    [SerializeField] Slider healthBar;
+    [SerializeField] Image healthBar;
 
     private float currentHealth;
     
@@ -22,7 +22,7 @@ public class HealthPlayer : MonoBehaviour {
         if (currentHealth <= 0)
             Death();
 
-        healthBar.value = currentHealth / MaxHealth;
+        healthBar.transform.localScale = new Vector3(currentHealth / MaxHealth, 1, 1);
     }
     
     void Death()

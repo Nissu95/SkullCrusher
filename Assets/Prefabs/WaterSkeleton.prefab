@@ -863,7 +863,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166835200472990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.6, y: 0, z: 119.425575}
+  m_LocalPosition: {x: 94.9, y: 0, z: 89.2061}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4149797899897314}
@@ -1507,15 +1507,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tr_Player: {fileID: 0}
-  speed: 4
+  speed: 10
   rotSpeed: 1
-  raycastDist: 10
+  raycastDist: 20
   layers:
     serializedVersion: 2
     m_Bits: 1792
   targetTagName: Player
   distanceDamage: 2
-  timeNextAttack: 3
+  timeNextAttack: 2
 --- !u!114 &114423655139526258
 MonoBehaviour:
   m_ObjectHideFlags: 1

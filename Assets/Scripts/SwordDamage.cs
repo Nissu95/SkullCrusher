@@ -28,7 +28,6 @@ public class SwordDamage : MonoBehaviour
             string playerElementName = PlayerManager.singleton.GetName();
             other.GetComponent<EnemyHealth>().TakeDamage(PlayerManager.singleton.GetDamage() * BattleManager.singleton.ElementMultiplier(playerElementName, enemyName));
             timer = 0;
-            Debug.Log("asdas");
         }
     }
 

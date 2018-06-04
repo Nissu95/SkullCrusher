@@ -7,15 +7,15 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerManager singleton;
 
     [SerializeField] ElementData[] data;
-    [SerializeField] ParticleSystem pS;
     private int elementIndex = 0;
 
     void Awake()
     {
+
         DontDestroyOnLoad(this);
         if (singleton != null)
         {
-            Debug.LogError("Battle Manager duplicado", gameObject);
+            Debug.LogError("Player Manager duplicado", gameObject);
             Destroy(this);
         }
         else
@@ -37,8 +37,6 @@ public class PlayerManager : MonoBehaviour {
                 elementIndex--;
             else
                 elementIndex = data.Length - 1;
-
-        ChangeMaterial();
     }
 
     public float GetDamage() {
@@ -50,19 +48,18 @@ public class PlayerManager : MonoBehaviour {
         return data[elementIndex].name;
     }
 
-    void ChangeMaterial()
+    public Color GetColorParticles()
     {
         switch (data[elementIndex].name)
         {
             case "Fire":
-                pS.startColor = Color.red;
-                break;
+                return Color.red;
             case "Water":
-                pS.startColor = Color.blue;
-                break;
+                return Color.blue;
             case "Plant":
-                pS.startColor = Color.green;
-                break;
+                return Color.green;
+            default:
+                return Color.white;
         }
     }
 }
