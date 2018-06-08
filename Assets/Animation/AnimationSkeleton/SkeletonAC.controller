@@ -38,6 +38,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: Blend
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -236,7 +242,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: afb1efdc6cb0a7b49aae10e6113d59a0, type: 3}
+  m_Motion: {fileID: 7400000, guid: 850bda32649e1f5469b40b21d485cb59, type: 3}
   m_Tag: 
   m_SpeedParameter: speedv
   m_MirrorParameter: 
@@ -504,7 +510,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 8ac2b1e2ecba486468e85353e3ebc0c0, type: 3}
+  m_Motion: {fileID: 7400000, guid: d1d3c0862d3488d4f99baacbc73a9520, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
