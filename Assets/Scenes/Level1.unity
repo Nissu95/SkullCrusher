@@ -495,6 +495,74 @@ Transform:
   m_PrefabParentObject: {fileID: 4534790075553616, guid: 3ace4c7f16442734bbabe6869148e33b,
     type: 2}
   m_PrefabInternal: {fileID: 1039248980}
+--- !u!1 &301775207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 301775208}
+  - component: {fileID: 301775210}
+  - component: {fileID: 301775209}
+  m_Layer: 8
+  m_Name: ResistanceBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &301775208
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301775207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 617981722}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.40000153, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &301775209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301775207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 0
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &301775210
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 301775207}
 --- !u!1 &330796531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,6 +1122,75 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e93754f9683ec9e46a2037e06c4342fa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &617981721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 617981722}
+  - component: {fileID: 617981724}
+  - component: {fileID: 617981723}
+  m_Layer: 8
+  m_Name: ResistanceBarBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &617981722
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617981721}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9979451, y: 0.2, z: 1}
+  m_Children:
+  - {fileID: 301775208}
+  m_Father: {fileID: 1049437546}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.0038071065, y: 0.09225926}
+  m_AnchorMax: {x: 0.19273096, y: 0.105000004}
+  m_AnchoredPosition: {x: -0.2000122, y: -0.3999939}
+  m_SizeDelta: {x: 1, y: 16}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &617981723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617981721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5955882, g: 0.5955882, b: 0.5955882, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &617981724
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617981721}
 --- !u!1 &699823740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1237,7 @@ MonoBehaviour:
   - {fileID: 1506513725}
   - {fileID: 2067189219}
   - {fileID: 1712023825}
+  - {fileID: 301775209}
 --- !u!1 &808575287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,16 +1768,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114330448329629714, guid: 3ace4c7f16442734bbabe6869148e33b,
-        type: 2}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 2067189219}
-    - target: {fileID: 114221595225789204, guid: 3ace4c7f16442734bbabe6869148e33b,
-        type: 2}
-      propertyPath: cooldownImage
-      value: 
-      objectReference: {fileID: 1506513725}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ace4c7f16442734bbabe6869148e33b, type: 2}
   m_IsPrefabParent: 0
@@ -1732,6 +1860,7 @@ RectTransform:
   - {fileID: 1506513724}
   - {fileID: 1965446296}
   - {fileID: 1901360686}
+  - {fileID: 617981722}
   m_Father: {fileID: 699823741}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

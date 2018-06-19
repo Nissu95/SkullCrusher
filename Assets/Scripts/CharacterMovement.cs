@@ -7,6 +7,9 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField] private float dashSpeed;
     [SerializeField] private float dashCooldown;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float maxResistance;
+    [SerializeField] private float fatigue;
+    [SerializeField] private float recovery;
 
     private Vector3 velocity;
     private CharacterController cc;
@@ -14,12 +17,14 @@ public class CharacterMovement : MonoBehaviour {
     private float vertical;
     float speed;
     float timer;
+    float resistance;
 
 	void Start () {
         cc = GetComponent<CharacterController>();
         velocity = Vector3.zero;
         speed = moveSpeed;
         timer = dashCooldown;
+        resistance = maxResistance;
 	}
 	
 	void Update () {
@@ -27,19 +32,24 @@ public class CharacterMovement : MonoBehaviour {
         timer += Time.deltaTime;
 
         UIManager.singleton.imageDashCooldown(timer, dashCooldown);
+        UIManager.singleton.imageResistanceBar(maxResistance, resistance);
 
         /*if (!cc.isGrounded)
             velocity.y -= gravity * Time.deltaTime;*/
-
+        speed = moveSpeed;
         if (Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftShift) && timer >= dashCooldown && velocity != Vector3.zero)
         {
             speed = dashSpeed;
             timer = 0;
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && velocity != Vector3.zero)
+        else if (Input.GetKey(KeyCode.LeftShift) && velocity != Vector3.zero && resistance > 0)
+        {
             speed = runSpeed;
-        else
-            speed = moveSpeed;       
+            resistance -= fatigue;
+        }
+        else if (resistance < maxResistance && !Input.GetKey(KeyCode.LeftShift))
+            resistance += recovery;
+            
 
         vertical = Input.GetAxis("Vertical") * speed;
         horizontal = Input.GetAxis("Horizontal") * speed;

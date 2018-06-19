@@ -24,11 +24,15 @@ public class UIManager : MonoBehaviour {
     }
 
     public void imageHealthBar(float currentHealth, float maxHealth) {
-        images[2].transform.localScale = new Vector3 (currentHealth / maxHealth, 1, 1);
+        images[2].rectTransform.localScale = new Vector3 (currentHealth / maxHealth, 1, 1);
     }
 
     public void imageShotCooldown(float timer, float cooldown) {
         images[1].fillAmount = timer / cooldown;
+    }
+
+    public void imageResistanceBar(float maxResistance, float resistance) {
+        images[4].rectTransform.localScale = new Vector3(resistance / maxResistance, 1, 1);
     }
 
 }

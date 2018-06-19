@@ -331,7 +331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 5
-  cooldownImage: {fileID: 0}
 --- !u!114 &114330448329629714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,7 +344,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   gameOverScene: GameOverScene
-  healthBar: {fileID: 0}
 --- !u!114 &114557641353210182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -376,6 +374,9 @@ MonoBehaviour:
   dashSpeed: 1000
   dashCooldown: 5
   runSpeed: 10
+  maxResistance: 1000
+  fatigue: 10
+  recovery: 10
 --- !u!114 &114972156951537970
 MonoBehaviour:
   m_ObjectHideFlags: 1
