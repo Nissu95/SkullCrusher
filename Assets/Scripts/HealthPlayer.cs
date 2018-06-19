@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour {
 
-    [SerializeField] float MaxHealth;
+    [SerializeField] float maxHealth;
     [SerializeField] string gameOverScene;
-    [SerializeField] Image healthBar;
-
     private float currentHealth;
     
 	void Start () {
-        currentHealth = MaxHealth;
+        currentHealth = maxHealth;
 	}
 
     public void TakeDamage(float amount)
@@ -22,7 +19,7 @@ public class HealthPlayer : MonoBehaviour {
         if (currentHealth <= 0)
             Death();
 
-        healthBar.transform.localScale = new Vector3(currentHealth / MaxHealth, 1, 1);
+        UIManager.singleton.imageHealthBar(currentHealth, maxHealth);
     }
     
     void Death()
