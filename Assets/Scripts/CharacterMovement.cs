@@ -1,39 +1,49 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterMovement : MonoBehaviour {
 
     [SerializeField] private float gravity;
     [SerializeField] private float moveSpeed;
-    [SerializeField] private float jumpSpeed;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashCooldown;
+    [SerializeField] private float runSpeed;
 
     private Vector3 velocity;
     private CharacterController cc;
     private float horizontal;
     private float vertical;
+    float speed;
+    float timer;
 
 	void Start () {
         cc = GetComponent<CharacterController>();
         velocity = Vector3.zero;
+        speed = moveSpeed;
+        timer = dashCooldown;
 	}
 	
 	void Update () {
 
-        if (!cc.isGrounded)
-        {
-            velocity.y -= gravity * Time.deltaTime;
-        }
-        else
-        {
-            if (cc.isGrounded && Input.GetKeyDown(KeyCode.Space))
-                velocity.y = jumpSpeed;
-            else
-                velocity.y = 0;
-        }
+        timer += Time.deltaTime;
 
-        vertical = Input.GetAxis("Vertical") * moveSpeed;
-        horizontal = Input.GetAxis("Horizontal") * moveSpeed;
+        UIManager.singleton.imageDashCooldown(timer, dashCooldown);
+
+        /*if (!cc.isGrounded)
+            velocity.y -= gravity * Time.deltaTime;*/
+
+        if (Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftShift) && timer >= dashCooldown && velocity != Vector3.zero)
+        {
+            speed = dashSpeed;
+            timer = 0;
+        }
+        else if (Input.GetKey(KeyCode.LeftShift) && velocity != Vector3.zero)
+            speed = runSpeed;
+        else
+            speed = moveSpeed;       
+
+        vertical = Input.GetAxis("Vertical") * speed;
+        horizontal = Input.GetAxis("Horizontal") * speed;
         velocity.x = 0;
         velocity.z = 0;
 

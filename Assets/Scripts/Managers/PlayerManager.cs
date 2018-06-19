@@ -11,7 +11,6 @@ public class PlayerManager : MonoBehaviour {
 
     void Awake()
     {
-
         DontDestroyOnLoad(this);
         if (singleton != null)
         {
@@ -20,9 +19,6 @@ public class PlayerManager : MonoBehaviour {
         }
         else
             singleton = this;
-    }
-
-    void Start () {
     }
 
 	void Update () {
