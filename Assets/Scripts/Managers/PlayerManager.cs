@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour {
         if (singleton != null)
         {
             Debug.LogError("Player Manager duplicado", gameObject);
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
             singleton = this;

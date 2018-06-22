@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour {
         if (singleton != null)
         {
             Debug.LogError("UI Manager duplicado", gameObject);
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
             singleton = this;
@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour {
 
     public void imageHealthBar(float currentHealth, float maxHealth) {
         images[2].rectTransform.localScale = new Vector3 (currentHealth / maxHealth, 1, 1);
+    }
+
+    public void resetHealthBar() {
+        images[2].rectTransform.localScale = new Vector3(1, 1, 1);
     }
 
     public void imageShotCooldown(float timer, float cooldown) {

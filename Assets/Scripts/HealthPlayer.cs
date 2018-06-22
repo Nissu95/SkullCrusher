@@ -11,7 +11,8 @@ public class HealthPlayer : MonoBehaviour {
     
 	void Start () {
         currentHealth = maxHealth;
-	}
+        UIManager.singleton.resetHealthBar();
+    }
 
     public void TakeDamage(float amount)
     {

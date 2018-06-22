@@ -12,7 +12,7 @@ public class BattleManager : MonoBehaviour {
         if (singleton != null)
         {
             Debug.LogError("Battle Manager duplicado", gameObject);
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
             singleton = this;
