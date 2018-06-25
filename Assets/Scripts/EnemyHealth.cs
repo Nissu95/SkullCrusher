@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-     [SerializeField] float enemyMaxHealth;
+    [SerializeField] float enemyMaxHealth;
 
+    Animator anim;
     float currentHealth;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         currentHealth = enemyMaxHealth;
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+        anim.SetTrigger("Hit");
         if (currentHealth <= 0)
             Death();
     }

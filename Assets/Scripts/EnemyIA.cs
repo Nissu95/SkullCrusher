@@ -69,8 +69,6 @@ public class EnemyIA : MonoBehaviour
             return;
         }
 
-        
-
         Debug.DrawLine(
             transform.position,
             transform.position + transform.forward * raycastDist, Color.yellow);
