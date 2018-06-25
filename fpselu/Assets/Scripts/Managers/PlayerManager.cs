@@ -44,18 +44,8 @@ public class PlayerManager : MonoBehaviour {
         return data[elementIndex].name;
     }
 
-    public Color GetColorParticles()
+    public string GetElementParticles()
     {
-        switch (data[elementIndex].name)
-        {
-            case "Fire":
-                return Color.red;
-            case "Water":
-                return Color.blue;
-            case "Plant":
-                return Color.green;
-            default:
-                return Color.white;
-        }
+        return data[elementIndex].name;
     }
 }
