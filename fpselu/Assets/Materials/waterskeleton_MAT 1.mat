@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: waterskeleton_MAT 1
-  m_Shader: {fileID: 6, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: d84268709d11078d11005b9844295342, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -22,9 +22,13 @@ Material:
         m_Texture: {fileID: 2800000, guid: 086f2ff73051f4e44a093273b8497a5e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Shininess: 1
     m_Colors:
-    - _Color: {r: 0.034331724, g: 0.114975594, b: 0.9338235, a: 1}
+    - _Color: {r: 0.40765572, g: 0.638289, b: 0.9558824, a: 1}
     - _Emission: {r: 0.33823532, g: 0.33823532, b: 0.33823532, a: 0}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
