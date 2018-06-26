@@ -43,9 +43,4 @@ public class PlayerManager : MonoBehaviour {
     public string GetName() {
         return data[elementIndex].name;
     }
-
-    public string GetElementParticles()
-    {
-        return data[elementIndex].name;
-    }
 }

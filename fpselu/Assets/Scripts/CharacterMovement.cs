@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour {
         /*if (!cc.isGrounded)
             velocity.y -= gravity * Time.deltaTime;*/
         speed = moveSpeed;
-        if (Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftShift) && timer >= dashCooldown && velocity != Vector3.zero)
+        if (Input.GetKey(KeyCode.Space) && timer >= dashCooldown && velocity != Vector3.zero)
         {
             speed = dashSpeed;
             timer = 0;

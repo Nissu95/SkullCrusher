@@ -16,10 +16,10 @@ public class ParticleColor : MonoBehaviour
 
     void Update()
     {
-        if (lastParticle != PlayerManager.singleton.GetElementParticles())
+        if (lastParticle != PlayerManager.singleton.GetName())
         {
             disableAll();
-            switch (PlayerManager.singleton.GetElementParticles())
+            switch (PlayerManager.singleton.GetName())
             {
                 case "Fire":
                     fireParticles.gameObject.SetActive(true);
@@ -33,7 +33,7 @@ public class ParticleColor : MonoBehaviour
             }
         }
 
-        lastParticle = PlayerManager.singleton.GetElementParticles();
+        lastParticle = PlayerManager.singleton.GetName();
     }
 
     void disableAll()
