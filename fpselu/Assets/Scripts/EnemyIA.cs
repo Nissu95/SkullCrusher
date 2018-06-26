@@ -2,25 +2,16 @@
 
 public class EnemyIA : MonoBehaviour
 {
-
-    [SerializeField]
-    private Transform tr_Player;
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float rotSpeed;
-    [SerializeField]
-    private float raycastDist;
-    [SerializeField]
-    private LayerMask layers;
-    [SerializeField]
-    private string targetTagName;
-    [SerializeField]
-    private float distanceDamage;
-    [SerializeField]
-    private float timeNextAttack;
-    [SerializeField]
-    private float stunnTime;
+    [SerializeField] private Transform tr_Player;
+    [SerializeField] private float speed;
+    [SerializeField] private float rotSpeed;
+    [SerializeField] private float raycastDist;
+    [SerializeField] private LayerMask layers;
+    [SerializeField] private string targetTagName;
+    [SerializeField] private float distanceDamage;
+    [SerializeField] private float timeNextAttack;
+    [SerializeField] private float stunnTime;
+    [SerializeField] private BoxCollider swordCollider;
 
     private float attackTimer = 0;
     private float stunnTimer = 0;
@@ -35,11 +26,7 @@ public class EnemyIA : MonoBehaviour
 
     void Update()
     {
-        if (attackTimer > 0)
-            attackTimer -= Time.deltaTime;
-
-        if (stunnTimer > 0)
-            stunnTimer -= Time.deltaTime;
+        UpdateTimers();
 
         if (stunnTimer <= 0 && eHealth.IsAlive())
         {
@@ -54,6 +41,7 @@ public class EnemyIA : MonoBehaviour
                 {
                     if (attackTimer <= 0 && eHealth.IsAlive())
                     {
+                        swordCollider.enabled = true;
                         anim.SetTrigger("Attack");
                         attackTimer = timeNextAttack;
                     }
@@ -63,7 +51,6 @@ public class EnemyIA : MonoBehaviour
                     if (hit.collider.tag == targetTagName)
                     {
                         diff.y = 0;
-
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(diff), 0.1f);
 
                         Vector3 mov = dir * speed * Time.deltaTime;
@@ -83,16 +70,21 @@ public class EnemyIA : MonoBehaviour
                     anim.SetBool("isWalking", false);
                 return;
             }
-
-            Debug.DrawLine(
-                transform.position,
-                transform.position + transform.forward * raycastDist, Color.yellow);
         }
         else
         {
             if (anim.GetBool("isWalking"))
                 anim.SetBool("isWalking", false);
         }
+    }
+
+    void UpdateTimers()
+    {
+        if (attackTimer > 0)
+            attackTimer -= Time.deltaTime;
+
+        if (stunnTimer > 0)
+            stunnTimer -= Time.deltaTime;
     }
 
     public void Stunn()
