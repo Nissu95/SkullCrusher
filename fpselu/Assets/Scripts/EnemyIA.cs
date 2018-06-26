@@ -39,6 +39,7 @@ public class EnemyIA : MonoBehaviour
             {
                 if (hit.distance <= distanceDamage)
                 {
+                    anim.SetBool("isWalking", false);
                     if (attackTimer <= 0 && eHealth.IsAlive())
                     {
                         swordCollider.enabled = true;
