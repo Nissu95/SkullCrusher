@@ -13,6 +13,7 @@ public class CharacterMovement : MonoBehaviour {
 
     private Vector3 velocity;
     private CharacterController cc;
+    private Animator anim;
     private float horizontal;
     private float vertical;
     float speed;
@@ -20,7 +21,8 @@ public class CharacterMovement : MonoBehaviour {
     float resistance;
 
 	void Start () {
-        cc = GetComponent<CharacterController>();
+        cc = GetComponentInChildren<CharacterController>();
+        anim = GetComponent<Animator>();
         velocity = Vector3.zero;
         speed = moveSpeed;
         timer = dashCooldown;
@@ -53,6 +55,10 @@ public class CharacterMovement : MonoBehaviour {
 
         vertical = Input.GetAxis("Vertical") * speed;
         horizontal = Input.GetAxis("Horizontal") * speed;
+        
+        anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
+        anim.SetFloat("Vertical", Input.GetAxis("Vertical"));
+
         velocity.x = 0;
         velocity.z = 0;
 
