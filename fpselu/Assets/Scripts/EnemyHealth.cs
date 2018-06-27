@@ -5,8 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float enemyMaxHealth;
+    [SerializeField] private GameObject[] particles;
 
     private EnemyIA EIA;
+    
     private Animator anim;
     private float currentHealth;
     private bool isAlive = true;
@@ -36,7 +38,11 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        anim.SetTrigger("Fall");
+        for (int i = 0; i < particles.Length; i++)
+            particles[i].SetActive(false);
+
+        if (!anim.GetBool("IsDead"))
+            anim.SetBool("IsDead", true);
         Invoke("Destruction", 5);
     }
 

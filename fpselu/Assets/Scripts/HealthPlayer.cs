@@ -7,6 +7,7 @@ public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float maxHealth;
     [SerializeField] string gameOverScene;
+
     private float currentHealth;
     
 	void Start () {

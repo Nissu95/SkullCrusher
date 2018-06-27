@@ -36,7 +36,7 @@ public class ParticleColor : MonoBehaviour
         lastParticle = PlayerManager.singleton.GetName();
     }
 
-    void disableAll()
+    public void disableAll()
     {
         fireParticles.gameObject.SetActive(false);
         waterParticles.gameObject.SetActive(false);
