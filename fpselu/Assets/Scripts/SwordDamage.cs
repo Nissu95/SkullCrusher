@@ -8,13 +8,16 @@ public class SwordDamage : MonoBehaviour
     [SerializeField] float swordDamage;
     [SerializeField] float attackCooldown;
     [SerializeField] string[] attackParameters;
+    [SerializeField] AudioClip swordSound;
 
+    AudioSource aS;
     private Animator anim;
     BoxCollider swordCollider;
     float timer;
 
     void Start()
     {
+        aS = GetComponentInParent<AudioSource>();
         swordCollider = GetComponent<BoxCollider>();
         swordCollider.enabled = false;
         timer = attackCooldown;
@@ -27,6 +30,7 @@ public class SwordDamage : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && timer >= attackCooldown)
         {
+            aS.PlayOneShot(swordSound);
             swordCollider.enabled = true;
             anim.SetTrigger(attackParameters[Random.Range(0,attackParameters.Length-1)]);
             timer = 0;

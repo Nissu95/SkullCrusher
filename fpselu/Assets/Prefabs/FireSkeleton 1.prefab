@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 114154753382663146}
   - component: {fileID: 114649274724531296}
   - component: {fileID: 54583963345892470}
+  - component: {fileID: 82050550727176432}
   m_Layer: 0
   m_Name: FireSkeleton 1
   m_TagString: Enemy
@@ -1540,6 +1541,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1709224, y: 0.26587215, z: 4.98}
   m_Center: {x: -0.00017729081, y: -0.0032318032, z: 2.68}
+--- !u!82 &82050550727176432
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788364142973858}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95543141324550396
 Animator:
   serializedVersion: 3
@@ -1572,6 +1653,7 @@ MonoBehaviour:
   particles:
   - {fileID: 1958790143645812}
   - {fileID: 1215124678899264}
+  deathSound: {fileID: 8300000, guid: fa033fd62ceeaa948ac55fb93ca8e757, type: 3}
 --- !u!114 &114408734599011620
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,18 +5,21 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float enemyMaxHealth;
-    [SerializeField] private GameObject[] particles;
+    [SerializeField] GameObject[] particles;
+    [SerializeField] AudioClip deathSound;
 
     private EnemyIA EIA;
     
     private Animator anim;
     private float currentHealth;
     private bool isAlive = true;
+    private AudioSource aS;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         EIA = GetComponent<EnemyIA>();
+        aS = GetComponent<AudioSource>();
         currentHealth = enemyMaxHealth;
     }
 
@@ -40,6 +43,11 @@ public class EnemyHealth : MonoBehaviour
     {
         for (int i = 0; i < particles.Length; i++)
             particles[i].SetActive(false);
+
+        if (deathSound)
+            aS.PlayOneShot(deathSound);
+        else
+            Debug.Log("No hay sonido de muerte");
 
         if (!anim.GetBool("IsDead"))
             anim.SetBool("IsDead", true);
