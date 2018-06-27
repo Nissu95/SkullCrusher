@@ -16,7 +16,7 @@ public class CameraLook : MonoBehaviour {
     Quaternion originalRotation;
 
 	void Update () {
-        angle -= Input.GetAxis("Mouse Y") * sensitivity;
+        angle -= InputManager.singleton.GetAxis("Mouse Y") * sensitivity;
 
         if (angle > maxAngle)
         {
@@ -33,6 +33,6 @@ public class CameraLook : MonoBehaviour {
         originalRotation.eulerAngles = euler;
         cameraTrans.localRotation = originalRotation * Quaternion.AngleAxis(angle, Vector3.right);
 
-        transform.Rotate(0 , Input.GetAxis("Mouse X") * sensitivity, 0);
+        transform.Rotate(0 , InputManager.singleton.GetAxis("Mouse X") * sensitivity, 0);
     }
 }

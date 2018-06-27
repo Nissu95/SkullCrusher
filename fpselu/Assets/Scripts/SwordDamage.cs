@@ -28,7 +28,7 @@ public class SwordDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && timer >= attackCooldown)
+        if (InputManager.singleton.GetButtonDown("Fire1") && timer >= attackCooldown)
         {
             aS.PlayOneShot(swordSound);
             swordCollider.enabled = true;

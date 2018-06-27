@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
 	void Update () {
+#if UNITY_STANDALONE_WIN
         if (Input.GetKeyDown(KeyCode.E))
             if (elementIndex < data.Length - 1)
                 elementIndex++;
@@ -33,6 +34,13 @@ public class PlayerManager : MonoBehaviour {
                 elementIndex--;
             else
                 elementIndex = data.Length - 1;
+#elif UNITY_ANDROID
+        if (InputManager.singleton.GetButtonDown("Next Element"))
+            if (elementIndex < data.Length - 1)
+                elementIndex++;
+            else
+                elementIndex = 0;
+#endif
     }
 
     public float GetDamage() {

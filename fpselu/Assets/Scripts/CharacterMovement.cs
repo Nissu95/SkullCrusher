@@ -39,7 +39,7 @@ public class CharacterMovement : MonoBehaviour {
         /*if (!cc.isGrounded)
             velocity.y -= gravity * Time.deltaTime;*/
         speed = moveSpeed;
-        if (Input.GetKey(KeyCode.Space) && timer >= dashCooldown && velocity != Vector3.zero)
+        if (InputManager.singleton.GetButtonDown("Dash") && timer >= dashCooldown && velocity != Vector3.zero)
         {
             speed = dashSpeed;
             timer = 0;
@@ -53,11 +53,11 @@ public class CharacterMovement : MonoBehaviour {
             resistance += recovery;
             
 
-        vertical = Input.GetAxis("Vertical") * speed;
-        horizontal = Input.GetAxis("Horizontal") * speed;
+        vertical = InputManager.singleton.GetAxis("Vertical") * speed;
+        horizontal = InputManager.singleton.GetAxis("Horizontal") * speed;
         
-        anim.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        anim.SetFloat("Vertical", Input.GetAxis("Vertical"));
+        anim.SetFloat("Horizontal", InputManager.singleton.GetAxis("Horizontal"));
+        anim.SetFloat("Vertical", InputManager.singleton.GetAxis("Vertical"));
 
         velocity.x = 0;
         velocity.z = 0;
