@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float enemyMaxHealth;
-    [SerializeField] GameObject[] particles;
     [SerializeField] AudioClip deathSound;
+    [SerializeField] UnityEvent deathEvent;
 
     private EnemyIA EIA;
     
@@ -41,8 +42,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Death()
     {
-        for (int i = 0; i < particles.Length; i++)
-            particles[i].SetActive(false);
+        deathEvent.Invoke();
 
         if (deathSound)
             aS.PlayOneShot(deathSound);

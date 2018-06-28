@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour {
     private Vector3 velocity;
     private CharacterController cc;
     private Animator anim;
+    private AudioSource aS;
     private float horizontal;
     private float vertical;
     float speed;
@@ -24,6 +25,7 @@ public class CharacterMovement : MonoBehaviour {
 	void Start () {
         cc = GetComponentInChildren<CharacterController>();
         anim = GetComponent<Animator>();
+        aS = GetComponent<AudioSource>();
         velocity = Vector3.zero;
         speed = moveSpeed;
         timer = dashCooldown;
@@ -74,6 +76,11 @@ public class CharacterMovement : MonoBehaviour {
 
     private void FootStep()
     {
-        Debug.Log("Paso");
+        aS.PlayOneShot(GetRandomClip());
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        return footSteps[Random.Range(0, footSteps.Length - 1)];
     }
 }
