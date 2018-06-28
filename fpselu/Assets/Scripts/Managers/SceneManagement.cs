@@ -33,8 +33,8 @@ public class SceneManagement : MonoBehaviour
     public void LoadLevelOne()
     {
         SceneManager.LoadScene(scenes[1]);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        /*Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;*/
     }
 
     public void LoadScenes()

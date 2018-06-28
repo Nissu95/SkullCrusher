@@ -1691,7 +1691,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1469919154202098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.66, y: 1, z: 68.93}
+  m_LocalPosition: {x: 19.75, y: 0.975, z: 16.81}
   m_LocalScale: {x: 0.9461514, y: 0.9461514, z: 0.9461514}
   m_Children:
   - {fileID: 4003609710202460}
@@ -2289,8 +2289,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5298915, y: 1.532704, z: 0.11632002}
-  m_Center: {x: 0.0000005663108, y: 0.50037146, z: -0.000000029824548}
+  m_Size: {x: 0.5298915, y: 2.13, z: 0.11632002}
+  m_Center: {x: 0.0000005663108, y: 1.18, z: -0.000000029824548}
 --- !u!81 &81337850993285254
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2446,6 +2446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  playerGrunts:
+  - {fileID: 8300000, guid: 67689c21a1ede6f4a955e7a589ffd405, type: 3}
+  - {fileID: 8300000, guid: cc486a8eaf1d71d4a98e000db8c7624d, type: 3}
+  - {fileID: 8300000, guid: 210054785ff27c44dabbfccb0cbbd8d7, type: 3}
 --- !u!114 &114557641353210182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2483,6 +2487,12 @@ MonoBehaviour:
   maxResistance: 1000
   fatigue: 10
   recovery: 10
+  footSteps:
+  - {fileID: 8300000, guid: c88f941f0652e8048be78e94b6879648, type: 3}
+  - {fileID: 8300000, guid: 3a9cd2eed86bb634c9da9b5864798f87, type: 3}
+  - {fileID: 8300000, guid: 80239785e252f734a942b4bd5c1b91e1, type: 3}
+  - {fileID: 8300000, guid: d1b0c91370b0bcb4fa83f9d084f31dba, type: 3}
+  - {fileID: 8300000, guid: b224ea4077fd9804c825863a283d50a6, type: 3}
 --- !u!114 &114972156951537970
 MonoBehaviour:
   m_ObjectHideFlags: 1
