@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float maxHealth;
-    [SerializeField] string gameOverScene;
 
     private float currentHealth;
     
@@ -26,6 +24,6 @@ public class HealthPlayer : MonoBehaviour {
     
     void Death()
     {
-        SceneManager.LoadScene(gameOverScene);
+        SceneManagement.singleton.LoadDeath();
     }
 }

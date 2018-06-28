@@ -10,7 +10,6 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField] private float maxResistance;
     [SerializeField] private float fatigue;
     [SerializeField] private float recovery;
-    [SerializeField] private AudioClip[] footSteps;
 
     private Vector3 velocity;
     private CharacterController cc;
@@ -71,9 +70,4 @@ public class CharacterMovement : MonoBehaviour {
 
         cc.Move(velocity * Time.deltaTime);
 	}
-
-    private void FootStep()
-    {
-        Debug.Log("Paso");
-    }
 }
