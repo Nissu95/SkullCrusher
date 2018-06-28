@@ -31,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
             isAlive = false;
             Death();
         }
+            
         else
         {
             anim.SetTrigger("Hit");
@@ -56,7 +57,8 @@ public class EnemyHealth : MonoBehaviour
 
     void Destruction()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
 
     public bool IsAlive()
