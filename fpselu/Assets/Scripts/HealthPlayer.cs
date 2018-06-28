@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float maxHealth;
+<<<<<<< HEAD
     [SerializeField] string gameOverScene;
     [SerializeField] AudioClip[] playerGrunts;
+=======
+>>>>>>> 2d6e3364bb297e2dc54ece3e776d17ef46fa1ebd
 
     int lastGrunt = 0;
 
@@ -33,7 +35,7 @@ public class HealthPlayer : MonoBehaviour {
     
     void Death()
     {
-        SceneManager.LoadScene(gameOverScene);
+        SceneManagement.singleton.LoadDeath();
     }
 
     void Grunt()

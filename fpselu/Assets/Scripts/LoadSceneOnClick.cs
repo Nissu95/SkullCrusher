@@ -1,22 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    [SerializeField] string SceneToLoad = "Game";
-    Button button;
-
-    private void Awake()
+    public void LoadLevelOne()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(LoadScene);
+        SceneManagement.singleton.LoadLevelOne();
     }
 
-    public void LoadScene()
+    public void LoadMenu()
     {
-        SceneManager.LoadScene(SceneToLoad);
+        SceneManagement.singleton.LoadMenu();
     }
 }

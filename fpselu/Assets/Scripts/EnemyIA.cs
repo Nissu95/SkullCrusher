@@ -20,6 +20,7 @@ public class EnemyIA : MonoBehaviour
 
     void Start()
     {
+        swordCollider.enabled = false;
         anim = GetComponent<Animator>();
         eHealth = GetComponent<EnemyHealth>();
     }
