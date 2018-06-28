@@ -5,11 +5,8 @@ using UnityEngine;
 public class HealthPlayer : MonoBehaviour {
 
     [SerializeField] float maxHealth;
-<<<<<<< HEAD
     [SerializeField] string gameOverScene;
     [SerializeField] AudioClip[] playerGrunts;
-=======
->>>>>>> 2d6e3364bb297e2dc54ece3e776d17ef46fa1ebd
 
     int lastGrunt = 0;
 
