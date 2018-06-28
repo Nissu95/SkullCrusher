@@ -18,22 +18,30 @@ public class InputManager : MonoBehaviour {
             singleton = this;
     }
 
+#if UNITY_ANDROID
+
     public float GetAxis(string axis)
     {
-#if UNITY_ANDROID
         return CrossPlatformInputManager.GetAxis(axis);
-#elif UNITY_STANDALONE_WIN
-        return Input.GetAxis(axis);
-# endif
     }
 
     public bool GetButtonDown(string button)
     {
-#if UNITY_ANDROID
-        return CrossPlatformInputManager.GetButtonDown(button);
-#elif UNITY_STANDALONE_WIN
-        return Input.GetButtonDown(button);
-# endif
+         return CrossPlatformInputManager.GetButtonDown(button);
     }
+
+#elif UNITY_STANDALONE_WIN
+
+    public float GetAxis(string axis)
+    {
+        return Input.GetAxis(axis);
+    }
+
+    public bool GetButtonDown(string button)
+    {
+        return Input.GetButtonDown(button);
+    }
+
+#endif
 
 }
