@@ -29,8 +29,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 		public ControlStyle controlStyle = ControlStyle.Absolute; // control style to use
 		public string horizontalAxisName = "Horizontal"; // The name given to the horizontal axis for the cross platform input
 		public string verticalAxisName = "Vertical"; // The name given to the vertical axis for the cross platform input
-		public float Xsensitivity = 1f;
-		public float Ysensitivity = 1f;
+		public float Xsensitivity;
+		public float Ysensitivity;
 
 		Vector3 m_StartPos;
 		Vector2 m_PreviousDelta;
