@@ -59,7 +59,7 @@ public class SceneManagement : MonoBehaviour
         if (level < levels.Length)
             MyLoadScenes(levels[level], false);
         else
-            MyLoadScenes(menuScene, true);
+            MyLoadScenes(winScene, true);
 
         level++;
     }
