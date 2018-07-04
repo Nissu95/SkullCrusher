@@ -1,10 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneManagement : MonoBehaviour
 {
 
     public static SceneManagement singleton;
+
+
+    [SerializeField]
+    GameObject loadingBarCanvas;
+    [SerializeField]
+    Image loadingBar;
 
     [SerializeField]
     string menuScene;
@@ -64,7 +72,26 @@ public class SceneManagement : MonoBehaviour
         else
             Cursor.lockState = CursorLockMode.Locked;
 
-        SceneManager.LoadScene(scene);
+        StartCoroutine(LoadAsynchronously(scene));
+    }
+
+    IEnumerator LoadAsynchronously(string scene)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
+
+        loadingBarCanvas.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            loadingBar.rectTransform.localScale = new Vector3(progress / 1, 1, 1);
+            Debug.Log(progress);
+
+            yield return null;
+        }
+
+        if (operation.isDone)
+            loadingBarCanvas.SetActive(false);
     }
 
 }
