@@ -31,7 +31,7 @@ public class HealthPlayer : MonoBehaviour {
     
     void Death()
     {
-        SceneManagement.singleton.LoadDeath();
+        SceneManagement.singleton.LoadGameOver();
     }
 
     void Grunt()

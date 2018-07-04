@@ -8,8 +8,7 @@ public class DoorOpener : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             if (other.gameObject.GetComponent<KeyScript>().HasKey())
-                SceneManagement.singleton.LoadScenes();
-
+                SceneManagement.singleton.LoadLevel();
         }
     }
 }

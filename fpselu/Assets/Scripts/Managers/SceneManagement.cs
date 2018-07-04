@@ -7,9 +7,15 @@ public class SceneManagement : MonoBehaviour
     public static SceneManagement singleton;
 
     [SerializeField]
-    string[] scenes;
+    string menuScene;
+    [SerializeField]
+    string gameOverScene;
+    [SerializeField]
+    string winScene;
+    [SerializeField]
+    string[] levels;
 
-    int i = 0;
+    uint level;
 
     void Awake()
     {
@@ -23,45 +29,42 @@ public class SceneManagement : MonoBehaviour
             singleton = this;
     }
 
-    public void LoadDeath()
-    {
-        SceneManager.LoadScene(scenes[3]);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void LoadLevelOne()
-    {
-        SceneManager.LoadScene(scenes[1]);
-        /*Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;*/
-    }
-
-    public void LoadScenes()
-    {
-        string sceneName = SceneManager.GetActiveScene().name;
-
-        if (sceneName == scenes[1])
-        {
-            SceneManager.LoadScene(scenes[2]);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
-        if (sceneName == scenes[2])
-        {
-            SceneManager.LoadScene(scenes[0]);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-
-    }
-
     public void LoadMenu()
     {
-        SceneManager.LoadScene(scenes[0]);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        MyLoadScenes(menuScene, true);
+    }
+
+    public void LoadGameOver()
+    {
+        MyLoadScenes(gameOverScene, true);
+    }
+
+    public void LoadWin()
+    {
+        MyLoadScenes(winScene, true);
+    }
+
+    public void LoadLevel()
+    {
+        Debug.Log("Cargando nivel");
+
+        if (level < levels.Length)
+            MyLoadScenes(levels[level], false);
+        else
+            MyLoadScenes(menuScene, true);
+
+        level++;
+    }
+
+    void MyLoadScenes(string scene, bool cursorVisible)
+    {
+        Cursor.visible = cursorVisible;
+        if (cursorVisible)
+            Cursor.lockState = CursorLockMode.None;
+        else
+            Cursor.lockState = CursorLockMode.Locked;
+
+        SceneManager.LoadScene(scene);
     }
 
 }

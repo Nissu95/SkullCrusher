@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    public void LoadLevelOne()
+    public void LoadLevel()
     {
-        SceneManagement.singleton.LoadLevelOne();
+        SceneManagement.singleton.LoadLevel();
     }
 
     public void LoadMenu()
