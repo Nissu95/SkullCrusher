@@ -9,19 +9,12 @@ public class SceneManagement : MonoBehaviour
     public static SceneManagement singleton;
 
 
-    [SerializeField]
-    GameObject loadingBarCanvas;
-    [SerializeField]
-    Image loadingBar;
-
-    [SerializeField]
-    string menuScene;
-    [SerializeField]
-    string gameOverScene;
-    [SerializeField]
-    string winScene;
-    [SerializeField]
-    string[] levels;
+    [SerializeField] GameObject loadingBarCanvas;
+    [SerializeField] Image loadingBar;
+    [SerializeField] string menuScene;
+    [SerializeField] string gameOverScene;
+    [SerializeField] string winScene;
+    [SerializeField] string[] levels;
 
     uint level;
 
@@ -71,7 +64,7 @@ public class SceneManagement : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         else
             Cursor.lockState = CursorLockMode.Locked;
-
+        
         StartCoroutine(LoadAsynchronously(scene));
     }
 
