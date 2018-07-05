@@ -37,6 +37,7 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadGameOver()
     {
+        UIManager.singleton.gameObject.SetActive(false);
         MyLoadScenes(gameOverScene, true);
     }
 
@@ -50,9 +51,15 @@ public class SceneManagement : MonoBehaviour
         Debug.Log("Cargando nivel");
 
         if (level < levels.Length)
+        {
             MyLoadScenes(levels[level], false);
+            UIManager.singleton.gameObject.SetActive(true);
+        }
         else
+        {
             MyLoadScenes(winScene, true);
+            UIManager.singleton.gameObject.SetActive(false);
+        }
 
         level++;
     }
