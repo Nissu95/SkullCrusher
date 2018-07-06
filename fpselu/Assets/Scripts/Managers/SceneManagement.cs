@@ -16,7 +16,7 @@ public class SceneManagement : MonoBehaviour
     [SerializeField] string winScene;
     [SerializeField] string[] levels;
 
-    uint level;
+    uint level = 0;
 
     void Awake()
     {
@@ -48,17 +48,17 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadLevel()
     {
-        Debug.Log("Cargando nivel");
+        Debug.Log("Cargando nivel: " + level);
 
         if (level < levels.Length)
         {
-            MyLoadScenes(levels[level], false);
             UIManager.singleton.gameObject.SetActive(true);
+            MyLoadScenes(levels[level], false);
         }
         else
         {
-            MyLoadScenes(winScene, true);
             UIManager.singleton.gameObject.SetActive(false);
+            MyLoadScenes(winScene, true);
         }
 
         level++;
