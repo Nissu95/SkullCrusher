@@ -39,6 +39,7 @@ public class SceneManagement : MonoBehaviour
     {
         UIManager.singleton.gameObject.SetActive(false);
         MyLoadScenes(gameOverScene, true);
+        level = 0;
     }
 
     public void LoadWin()
@@ -59,6 +60,7 @@ public class SceneManagement : MonoBehaviour
         {
             UIManager.singleton.gameObject.SetActive(false);
             MyLoadScenes(winScene, true);
+            level = 0;
         }
 
         level++;
