@@ -12,7 +12,7 @@ public class EnemyIA : MonoBehaviour
     [SerializeField] private float timeNextAttack;
     [SerializeField] private float stunnTime;
     [SerializeField] private BoxCollider swordCollider;
-
+    
     private float attackTimer = 0;
     private float stunnTimer = 0;
     private EnemyHealth eHealth;
@@ -36,6 +36,7 @@ public class EnemyIA : MonoBehaviour
             Vector3 dir = diff.normalized;
 
             RaycastHit hit;
+
             if (Physics.Raycast(transform.position, dir, out hit, raycastDist, layers))
             {
                 if (hit.distance <= distanceDamage)
@@ -92,5 +93,10 @@ public class EnemyIA : MonoBehaviour
     public void Stunn()
     {
         stunnTimer = stunnTime;
+    }
+
+    public void Damaged()
+    {
+        raycastDist = Mathf.Infinity;
     }
 }

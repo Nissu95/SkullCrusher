@@ -37,6 +37,7 @@ public class EnemyHealth : MonoBehaviour
         {
             anim.SetTrigger("Hit");
             EIA.Stunn();
+            EIA.Damaged();
         }
             
     }
