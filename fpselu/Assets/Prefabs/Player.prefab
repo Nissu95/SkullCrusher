@@ -2406,7 +2406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a2c5454f090674b905e70ceaa57670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivity: 3
+  sensitivity: 1.5
   cameraTrans: {fileID: 4003609710202460}
   maxAngle: 70
   minAngle: -50

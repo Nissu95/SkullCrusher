@@ -8,6 +8,8 @@ namespace UnityStandardAssets.CrossPlatformInput
 	[RequireComponent(typeof(Image))]
 	public class TouchPad : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 	{
+        [SerializeField] Image circulito;
+
 		// Options for which axes to use
 		public enum AxisOption
 		{
@@ -102,11 +104,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 		{
 			m_Dragging = true;
 			m_Id = data.pointerId;
+            circulito.rectTransform.position = data.position;
+            circulito.gameObject.SetActive(true);
 #if !UNITY_EDITOR
         if (controlStyle != ControlStyle.Absolute )
             m_Center = data.position;
 #endif
-		}
+        }
 
 		void Update()
 		{
@@ -142,6 +146,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 			m_Dragging = false;
 			m_Id = -1;
 			UpdateVirtualAxes(Vector3.zero);
+            circulito.gameObject.SetActive(false);
 		}
 
 		void OnDisable()

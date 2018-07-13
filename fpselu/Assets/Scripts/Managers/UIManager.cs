@@ -4,6 +4,9 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
     public static UIManager singleton;
+    [SerializeField] Image waterImage;
+    [SerializeField] Image fireImage;
+    [SerializeField] Image plantImage;
 
     [SerializeField] Image[] images;
 
@@ -37,6 +40,30 @@ public class UIManager : MonoBehaviour {
 
     public void imageResistanceBar(float maxResistance, float resistance) {
         images[4].rectTransform.localScale = new Vector3(resistance / maxResistance, 1, 1);
+    }
+
+    public void SwitchMaterial()
+    {
+        DisableImages();
+        switch (PlayerManager.singleton.GetName())
+        {
+            case "Water":
+                waterImage.gameObject.SetActive(true);
+                break;
+            case "Fire":
+                fireImage.gameObject.SetActive(true);
+                break;
+            case "Plant":
+                plantImage.gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    void DisableImages()
+    {
+        waterImage.gameObject.SetActive(false);
+        fireImage.gameObject.SetActive(false);
+        plantImage.gameObject.SetActive(false);
     }
 
 }

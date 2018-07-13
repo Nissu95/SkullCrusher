@@ -19,20 +19,30 @@ public class PlayerManager : MonoBehaviour {
         }
         else
             singleton = this;
+
+        UIManager.singleton.SwitchMaterial();
     }
 
 	void Update () {
         if (InputManager.singleton.GetButtonDown("Next Element"))
+        {
             if (elementIndex < data.Length - 1)
                 elementIndex++;
             else
                 elementIndex = 0;
 
+            UIManager.singleton.SwitchMaterial();
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
+        {
             if (elementIndex > 0)
                 elementIndex--;
             else
                 elementIndex = data.Length - 1;
+
+            UIManager.singleton.SwitchMaterial();
+        }
     }
 
     public float GetDamage() {
