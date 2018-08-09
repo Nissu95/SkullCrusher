@@ -58,8 +58,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Destruction()
     {
-        //Destroy(gameObject);
-        this.gameObject.SetActive(false);
+		GetComponent<PoolObject>().Recycle();
     }
 
     public bool IsAlive()

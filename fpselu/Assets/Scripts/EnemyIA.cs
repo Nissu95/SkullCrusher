@@ -2,7 +2,6 @@
 
 public class EnemyIA : MonoBehaviour
 {
-    [SerializeField] private Transform tr_Player;
     [SerializeField] private float speed;
     [SerializeField] private float rotSpeed;
     [SerializeField] private float raycastDist;
@@ -31,7 +30,8 @@ public class EnemyIA : MonoBehaviour
 
         if (stunnTimer <= 0 && eHealth.IsAlive())
         {
-            Vector3 diff = tr_Player.position - transform.position;
+			
+			Vector3 diff = Player.GetInstance().transform.position - transform.position;
             float dist = diff.magnitude;
             Vector3 dir = diff.normalized;
 
