@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerManager singleton;
 
+    private GameObject m_Player;
+
     [SerializeField] ElementData[] data;
     private int elementIndex = 0;
 
@@ -52,5 +54,15 @@ public class PlayerManager : MonoBehaviour {
 
     public string GetName() {
         return data[elementIndex].name;
+    }
+
+    public void SetPlayerInstance(GameObject player)
+    {
+        m_Player = player;
+    }
+
+    public GameObject GetPlayerInstance()
+    {
+        return m_Player;
     }
 }

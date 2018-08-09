@@ -31,7 +31,7 @@ public class EnemyIA : MonoBehaviour
         if (stunnTimer <= 0 && eHealth.IsAlive())
         {
 			
-			Vector3 diff = Player.GetInstance().transform.position - transform.position;
+			Vector3 diff = PlayerManager.singleton.GetPlayerInstance().transform.position - transform.position;
             float dist = diff.magnitude;
             Vector3 dir = diff.normalized;
 

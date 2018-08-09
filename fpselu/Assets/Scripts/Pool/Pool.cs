@@ -33,8 +33,6 @@ public class Pool : MonoBehaviour
 
             po.gameObject.SetActive(true);
 
-            Debug.LogWarning("Creando balas en realtime.");
-
             return po;
         }
     }
