@@ -32,6 +32,7 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadMenu()
     {
+        level = 0;
         MyLoadScenes(menuScene, true);
     }
 
@@ -59,8 +60,7 @@ public class SceneManagement : MonoBehaviour
         else
         {
             UIManager.singleton.gameObject.SetActive(false);
-            MyLoadScenes(winScene, true);
-            level = 0;
+            LoadWin();
         }
 
         level++;
