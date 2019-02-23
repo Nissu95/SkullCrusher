@@ -15,7 +15,7 @@ public class HealthPlayer : MonoBehaviour {
 	void Start () {
         aS = GetComponent<AudioSource>();
         currentHealth = maxHealth;
-        UIManager.singleton.resetHealthBar();
+        //UIManager.singleton.resetHealthBar();
     }
 
     public void TakeDamage(float amount)

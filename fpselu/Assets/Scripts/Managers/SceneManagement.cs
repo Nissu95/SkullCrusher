@@ -68,12 +68,15 @@ public class SceneManagement : MonoBehaviour
 
     void MyLoadScenes(string scene, bool cursorVisible)
     {
+#if UNITY_STANDALONE_WIN
         Cursor.visible = cursorVisible;
         if (cursorVisible)
             Cursor.lockState = CursorLockMode.None;
         else
             Cursor.lockState = CursorLockMode.Locked;
-        
+#endif
+
+
         StartCoroutine(LoadAsynchronously(scene));
     }
 
@@ -87,7 +90,6 @@ public class SceneManagement : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
             loadingBar.rectTransform.localScale = new Vector3(progress / 1, 1, 1);
-            Debug.Log(progress);
 
             yield return null;
         }

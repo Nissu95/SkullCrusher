@@ -3,21 +3,6 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class InputManager : MonoBehaviour {
 
-
-    public static InputManager singleton;
-
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
-        if (singleton != null)
-        {
-            Debug.LogError("Input Manager duplicado", gameObject);
-            Destroy(gameObject);
-        }
-        else
-            singleton = this;
-    }
-
 #if UNITY_ANDROID
 
     public float GetAxis(string axis)

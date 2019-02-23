@@ -17,7 +17,7 @@ public class Shot : MonoBehaviour {
 
         UIManager.singleton.imageShotCooldown(timer, attackCooldown);
 
-        if (InputManager.singleton.GetButtonDown("Fire2") && timer >= attackCooldown)
+        if (Input.GetButtonDown("Fire2") && timer >= attackCooldown)
         {
             pool = PoolManager.GetInstance().GetPool(PlayerManager.singleton.GetName() + "ProyectilePool");
 

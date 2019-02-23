@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class SwordDamage : MonoBehaviour
 {
@@ -28,7 +27,7 @@ public class SwordDamage : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (InputManager.singleton.GetButtonDown("Fire1") && timer >= attackCooldown)
+        if (CrossPlatformInputManager.GetButtonDown("Fire1") && timer >= attackCooldown)
         {
             aS.PlayOneShot(swordSound);
             swordCollider.enabled = true;

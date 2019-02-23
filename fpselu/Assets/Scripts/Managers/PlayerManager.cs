@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour {
@@ -26,7 +25,7 @@ public class PlayerManager : MonoBehaviour {
     }
 
 	void Update () {
-        if (InputManager.singleton.GetButtonDown("Next Element"))
+        if (CrossPlatformInputManager.GetButtonDown("Next Element"))
         {
             if (elementIndex < data.Length - 1)
                 elementIndex++;
