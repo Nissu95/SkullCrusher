@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class CharacterMovement : MonoBehaviour {
 
@@ -11,6 +12,12 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField] private float fatigue;
     [SerializeField] private float recovery;
     [SerializeField] private AudioClip[] footSteps;
+
+    [SerializeField] LeftJoystick leftJoystick;
+    [SerializeField] RightJoystick rightJoystick;
+
+    public int rotationSpeed = 8; // rotation speed of the player character
+
 
     private Vector3 velocity;
     private CharacterController cc;
@@ -35,14 +42,11 @@ public class CharacterMovement : MonoBehaviour {
 	void Update () {
 
         timer += Time.deltaTime;
-
-        UIManager.singleton.imageDashCooldown(timer, dashCooldown);
-        UIManager.singleton.imageResistanceBar(maxResistance, resistance);
-
+        
         /*if (!cc.isGrounded)
             velocity.y -= gravity * Time.deltaTime;*/
         speed = moveSpeed;
-        if (InputManager.singleton.GetButtonDown("Dash") && timer >= dashCooldown && velocity != Vector3.zero)
+        if (CrossPlatformInputManager.GetButtonDown("Dash") && timer >= dashCooldown && velocity != Vector3.zero)
         {
             speed = dashSpeed;
             timer = 0;
@@ -54,13 +58,29 @@ public class CharacterMovement : MonoBehaviour {
         }
         else if (resistance < maxResistance && !Input.GetKey(KeyCode.LeftShift))
             resistance += recovery;
-            
 
-        vertical = InputManager.singleton.GetAxis("Vertical") * speed;
-        horizontal = InputManager.singleton.GetAxis("Horizontal") * speed;
-        
-        anim.SetFloat("Horizontal", InputManager.singleton.GetAxis("Horizontal"));
-        anim.SetFloat("Vertical", InputManager.singleton.GetAxis("Vertical"));
+        UIManager.singleton.imageDashCooldown(timer, dashCooldown);
+        UIManager.singleton.imageResistanceBar(maxResistance, resistance);
+
+#if UNITY_ANDROID
+
+        Vector2 leftJoystickInput  = leftJoystick.GetInputDirection();
+
+        float xMovementLeftJoystick = leftJoystickInput.x; // The horizontal movement from joystick 01
+        float zMovementLeftJoystick = leftJoystickInput.y; // The vertical movement from joystick 01	
+
+        horizontal = xMovementLeftJoystick * speed;
+        vertical = zMovementLeftJoystick * speed;
+
+#elif UNITY_STANDALONE_WIN
+
+        vertical = Input.GetAxis("Vertical") * speed;
+        horizontal = Input.GetAxis("Horizontal") * speed;
+
+#endif
+
+        anim.SetFloat("Horizontal", horizontal);
+        anim.SetFloat("Vertical", vertical);
 
         velocity.x = 0;
         velocity.z = 0;

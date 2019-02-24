@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Shot : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class Shot : MonoBehaviour {
 
         UIManager.singleton.imageShotCooldown(timer, attackCooldown);
 
-        if (InputManager.singleton.GetButtonDown("Fire2") && timer >= attackCooldown)
+        if (CrossPlatformInputManager.GetButtonDown("Fire2") && timer >= attackCooldown)
         {
             pool = PoolManager.GetInstance().GetPool(PlayerManager.singleton.GetName() + "ProyectilePool");
 

@@ -12,20 +12,34 @@ public class CameraLook : MonoBehaviour {
     [SerializeField]
     float minAngle;
 
+    [SerializeField] RightJoystick rightJoystick;
+
     float angle = 0.0f;
     Quaternion originalRotation;
 
-	void Update () {
-        angle -= InputManager.singleton.GetAxis("Mouse Y") * sensitivity;
+    Vector3 rightJoystickInput; // hold the input of the Right Joystick
+
+    void Update () {
+        
+        float yMovement = 0;
+        float xMovement = 0;
+
+#if UNITY_ANDROID
+        rightJoystickInput = rightJoystick.GetInputDirection(); // The vertical movement from right joystick
+
+        yMovement = rightJoystickInput.y;
+        xMovement = rightJoystickInput.x;
+#elif UNITY_STANDALONE_WIN
+        yMovement = Input.GetAxis("Mouse Y");
+        xMovement = Input.GetAxis("Mouse X");
+#endif
+
+        angle -= yMovement * sensitivity;
 
         if (angle > maxAngle)
-        {
             angle = maxAngle;
-        }
         else if (angle < minAngle)
-        {
             angle = minAngle;
-        }
 
         originalRotation = cameraTrans.localRotation;
         Vector3 euler = originalRotation.eulerAngles;
@@ -33,6 +47,8 @@ public class CameraLook : MonoBehaviour {
         originalRotation.eulerAngles = euler;
         cameraTrans.localRotation = originalRotation * Quaternion.AngleAxis(angle, Vector3.right);
 
-        transform.Rotate(0 , InputManager.singleton.GetAxis("Mouse X") * sensitivity, 0);
+
+        transform.Rotate(0 , xMovement * sensitivity, 0);
+
     }
 }
