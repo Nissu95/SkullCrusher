@@ -25,10 +25,13 @@ public class HealthPlayer : MonoBehaviour {
             Death();
         else
             Grunt();
+    }
 
+    private void Update()
+    {
         UIManager.singleton.imageHealthBar(currentHealth, maxHealth);
     }
-    
+
     void Death()
     {
         SceneManagement.singleton.LoadGameOver();

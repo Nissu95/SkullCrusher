@@ -16,22 +16,28 @@ public class EnemyIA : MonoBehaviour
     private float stunnTimer = 0;
     private EnemyHealth eHealth;
     private Animator anim;
+    private CharacterController characterController;
 
     void Start()
     {
         swordCollider.enabled = false;
         anim = GetComponent<Animator>();
         eHealth = GetComponent<EnemyHealth>();
+        characterController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
         UpdateTimers();
 
+        characterController.Move(Vector3.down);
+
+        Vector3 mov = Vector3.zero;
+
         if (stunnTimer <= 0 && eHealth.IsAlive())
         {
-			
-			Vector3 diff = PlayerManager.singleton.GetPlayerInstance().transform.position - transform.position;
+
+            Vector3 diff = PlayerManager.singleton.GetPlayerInstance().transform.position - transform.position;
             float dist = diff.magnitude;
             Vector3 dir = diff.normalized;
 
@@ -56,9 +62,9 @@ public class EnemyIA : MonoBehaviour
                         diff.y = 0;
                         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(diff), 0.1f);
 
-                        Vector3 mov = dir * speed * Time.deltaTime;
+                        mov = dir * speed * Time.deltaTime;
                         mov = Vector3.ClampMagnitude(mov, dist);
-                        transform.position += mov;
+                        
                         if (!anim.GetBool("isWalking"))
                             anim.SetBool("isWalking", true);
                     }
@@ -79,6 +85,9 @@ public class EnemyIA : MonoBehaviour
             if (anim.GetBool("isWalking"))
                 anim.SetBool("isWalking", false);
         }
+
+
+        characterController.Move(mov);
     }
 
     void UpdateTimers()

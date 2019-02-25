@@ -91,6 +91,8 @@ public class CharacterMovement : MonoBehaviour {
         velocity.x += transform.right.x * horizontal;
         velocity.z += transform.right.z * horizontal;
 
+        velocity.y = -10;
+
         cc.Move(velocity * Time.deltaTime);
 	}
 
